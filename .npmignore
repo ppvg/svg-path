@@ -1,3 +1,4 @@
 .*.swp
 .travis.yml
 svg-path-*.tgz
+cov/

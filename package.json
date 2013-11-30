@@ -10,10 +10,12 @@
     "svg-numbers": "~0.1.1"
   },
   "devDependencies": {
-    "tape": "~2.3.0"
+    "tape": "~2.3.0",
+    "coverjs": "0.0.14"
   },
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "tape test/*.js",
+    "cover": "script/cover.sh"
   },
   "author": "Peter-Paul van Gemerden <mail@ppvg.nl>",
   "license": "MIT",
