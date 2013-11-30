@@ -6,6 +6,8 @@ Parse and manipulate SVG `<path>`s.
 
 ## Usage example
 
+### Parsing
+
     var svgPath = require('svg-path')
 
     var pathData = 'm100,1e2C125,100 130,110 150,150l-25-75z'
@@ -22,11 +24,31 @@ Parse and manipulate SVG `<path>`s.
         ]
     */
 
-    // Apply transformations:
+### Applying transformations
 
+    var path = svgPath(pathData)
     path.abs()
     path.matrix(1, 0, 0, 1, 100, 50) // same as translate(100, 50)
 
-    // Transformations are applied in-place. To retain the original, create a copy first:
+Transformations are applied in-place. To retain the original, create a copy first:
 
     var newPath = path.copy()
+
+Available transformations are `abs`, `translate`, `scale`, `rotate`, `skewX` and `skewY` and `convertArcs`. The latter converts all `A` (arc) commands to `C` (curveto) commands. All transformations expect `#abs()` start by calling `#convertArcs`.
+
+## Running the tests
+
+    $ git clone https://github.com/PPvG/svg-path
+    $ cd svg-path
+    $ npm install
+    $ npm test
+
+### Code coverage report
+
+    $ npm run cover
+
+Then open `./cov/report.html` in your browser.
+
+## License
+
+[MIT](https://raw.github.com/PPvG/svg-path/master/LICENSE)
