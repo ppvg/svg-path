@@ -2,6 +2,8 @@
 
 Parse and manipulate SVG `<path>`s.
 
+[![Build status](https://travis-ci.org/PPvG/svg-path.png?branch=master)](https://travis-ci.org/PPvG/svg-path)
+
 ## Usage example
 
     var svgPath = require('svg-path')
