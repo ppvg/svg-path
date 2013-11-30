@@ -77,3 +77,25 @@ test('x1,y1 and x2,y2', function (t) {
     ])
   t.end()
 })
+
+test('arcs', function(t) {
+  var path = new Path([
+    { type: 'M', relative:false, x:275, y:175 },
+    { type: 'V', relative:false, y:25 },
+    { type: 'A', relative:false, rx:150, ry:150,
+      x_axis_rotation:0, large_arc_flag:0, sweep_flag:0,
+      x:125, y:175 }
+  ])
+  path.matrix(1, 0, 0, 1, 10, 10) // translate 10,10
+  t.same(path.content,
+    [
+      { type: 'M', relative:false, x:285, y:185 },
+      { type: 'V', relative:false, y:35 },
+      { type: 'C', relative:false,
+        x1:202.15728752538098, y1:35.000000000000014,
+        x2:134.99999999999999, y2:102.157287525381,
+        x:135, y:185 }
+    ])
+  t.end()
+
+})
