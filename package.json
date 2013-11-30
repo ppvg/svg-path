@@ -1,0 +1,35 @@
+{
+  "name": "svg-path",
+  "version": "0.0.0",
+  "description": "Manipulate SVG <path> data.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "svg-numbers": "~0.1.1"
+  },
+  "devDependencies": {
+    "tape": "~2.3.0"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "author": "Peter-Paul van Gemerden <mail@ppvg.nl>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PPvG/svg-path.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PPvG/svg-path/issues"
+  },
+  "homepage": "https://github.com/PPvG/svg-path",
+  "keywords": [
+    "svg",
+    "path",
+    "parse",
+    "serialize",
+    "transform"
+  ]
+}
