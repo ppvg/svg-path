@@ -2,7 +2,7 @@
 
 Parse and manipulate SVG `<path>`s.
 
-[![Build status](https://travis-ci.org/PPvG/svg-path.png?branch=master)](https://travis-ci.org/PPvG/svg-path)
+[![NPM version](https://badge.fury.io/js/svg-path.png)](http://badge.fury.io/js/svg-path) [![Build status](https://travis-ci.org/PPvG/svg-path.png?branch=master)](https://travis-ci.org/PPvG/svg-path)
 
 ## Usage example
 
