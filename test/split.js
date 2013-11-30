@@ -42,6 +42,30 @@ test('explicit subpath', function (t) {
   t.end()
 })
 
+test('relative subpath', function (t) {
+  var path = new Path([
+    { type: 'M', relative:false, x:50, y:50 },
+    { type: 'L', relative:false, x:100, y:100 },
+    { type: 'Z' },
+    { type: 'M', relative:true, x:50, y:50 },
+    { type: 'L', relative:false, x:200, y:200 }
+  ])
+  var subpaths = path.split()
+  t.same(subpaths.length, 2)
+  t.same(subpaths[0].content,
+    [
+      { type: 'M', relative:false, x:50, y:50 },
+      { type: 'L', relative:false, x:100, y:100 },
+      { type: 'Z' }
+    ])
+  t.same(subpaths[1].content,
+    [
+      { type: 'M', relative:false, x:100, y:100 },
+      { type: 'L', relative:false, x:200, y:200 }
+    ])
+  t.end()
+})
+
 test('subpath without closepath', function (t) {
   var path = new Path([
     { type: 'M', relative:false, x:0, y:0 },
