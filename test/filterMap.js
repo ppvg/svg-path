@@ -75,5 +75,19 @@ test('replace command', function (t) {
     { type: 'Z' }
   ])
   t.end()
+})
+
+test('x and y', function (t) {
+  var path = new Path([
+    { type: 'M', relative:false, x:40, y:60 },
+    { type: 'L', relative:false, x:100, y:100 },
+    { type: 'Z' }
+  ])
+  path.filterMap(function (command, x, y) {
+    if (command.type === 'L') {
+      t.equal(x, 40)
+      t.equal(y, 60)
+    }
+  })
   t.end()
 })
